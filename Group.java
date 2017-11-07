@@ -159,17 +159,7 @@ public class Group implements Voencom {
     @Override
     public String toString() {
 
-        StringBuilder sb = new StringBuilder();
-
-        int i = 0;
-
-        for (Student student : groupOfStudentsArray) {
-            if (student != null) {
-                sb.append((++i) + ") ").append(student);
-                sb.append(System.lineSeparator());
-            }
-        }
-        return sb.toString();
+        return arrayToString(groupOfStudentsArray);
     }
 
     @Override
@@ -196,11 +186,15 @@ public class Group implements Voencom {
 
     public String getRecruterToString(){
 
+        return arrayToString(getRecruter());
+    }
+
+    public String arrayToString(Student[] arrayStudents){
         StringBuilder sb = new StringBuilder();
 
         int i = 0;
 
-        for (Student student : getRecruter()) {
+        for (Student student : arrayStudents) {
             if (student != null) {
                 sb.append((++i) + ") ").append(student);
                 sb.append(System.lineSeparator());
@@ -208,5 +202,4 @@ public class Group implements Voencom {
         }
         return sb.toString();
     }
-
 }
